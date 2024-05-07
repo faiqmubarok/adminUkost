@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Create Product | UKostAdmin
+    </title>
+</head>
+
+<body
+    x-data="{ page: 'create-product', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+    x-init="
+    darkMode = JSON.parse(localStorage.getItem('darkMode'));
+    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
+
+    <!-- ===== Preloader Start ===== -->
+    <include src="./partials/preloader.html"></include>
+    <!-- ===== Preloader End ===== -->
+
+    <!-- ===== Page Wrapper Start ===== -->
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- ===== Sidebar Start ===== -->
+        <include src="./partials/sidebar.html"></include>
+        <!-- ===== Sidebar End ===== -->
+
+        <!-- ===== Content Area Start ===== -->
+        <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+            <!-- ===== Header Start ===== -->
+            <include src="./partials/header.html" />
+            <!-- ===== Header End ===== -->
+
+            <!-- ===== Main Content Start ===== -->
+            <main>
+                <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+                    <div class="mx-auto max-w-7xl">
+                        <!-- Breadcrumb Start -->
+                        <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-title-md2 font-bold text-black dark:text-white">
+                                Buat Produk Baru
+                            </h2>
+
+                            <nav>
+                                <ol class="flex items-center gap-2">
+                                    <li>
+                                        <a class="font-medium" href="index.html">Dashboard /</a>
+                                    </li>
+                                    <li>
+                                        <a class="font-medium" href="product.html">Product /</a>
+                                    </li>
+                                    <li class="text-primary">Create Product</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <!-- Breadcrumb End -->
+
+                        <!-- ====== Product Section Start -->
+                        <form action="">
+                            <section class="grid grid-cols-1 gap-9 md:grid-cols-2">
+                                <!-- General, Fasilitas Umum, Fasilitas Kamar -->
+                                <div class="flex flex-col gap-9">
+                                    <!-- General -->
+                                    <div
+                                        class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                        <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                                            <h3 class="font-medium text-black dark:text-white">
+                                                Formulir Buat Produk
+                                            </h3>
+                                        </div>
+                                        <div class="p-6.5">
+                                            <!-- Product -->
+                                            <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                                                <!-- Nama Kost -->
+                                                <div class="w-full xl:w-1/2">
+                                                    <label for="Nama"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Nama
+                                                        <span class="text-meta-1">*</span> </label>
+                                                    <input type="text" name="Nama" id="Nama"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Masukkan nama kost/kontrakan" required="">
+                                                </div>
+                                                <!-- No Telp Kost -->
+                                                <div class="w-full xl:w-1/2">
+                                                    <label for="NoTelpProperty"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Nomor
+                                                        Telepon</label>
+                                                    <input type="text" name="NoTelpProperty" id="NoTelpProperty"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Masukkan nomor telepon">
+                                                </div>
+                                            </div>
+                                            <!-- Pemilik -->
+                                            <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                                                <!-- Nama Pemilik -->
+                                                <div class="w-full xl:w-1/2">
+                                                    <label for="Nama-Pemilik"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Nama
+                                                        Pemilik</label>
+                                                    <input type="text" name="Nama-Pemilik" id="Nama-Pemilik"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Masukkan nama pemilik">
+                                                </div>
+                                                <!-- No Telp Pemilik -->
+                                                <div class="w-full xl:w-1/2">
+                                                    <label for="NoTelp-Pemilik"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Nomor
+                                                        Pemilik</label>
+                                                    <input type="text" name="NoTelp-Pemilik" id="NoTelp-Pemilik"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Masukkan nomor pemilik">
+                                                </div>
+                                            </div>
+                                            <!-- Pengelola -->
+                                            <div class="mb-8 flex flex-col gap-6 xl:flex-row">
+                                                <!-- Nama Pengelola -->
+                                                <div class="w-full xl:w-1/2">
+                                                    <label for="Nama-Pengelola"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Nama
+                                                        Pengelola</label>
+                                                    <input type="text" name="Nama-Pengelola" id="Nama-Pengelola"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Masukkan nama pengelola">
+                                                </div>
+                                                <!-- No Telp Pemilik -->
+                                                <div class="w-full xl:w-1/2">
+                                                    <label for="NoTelp-Pengelola"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Nomor
+                                                        Pengelola <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="NoTelp-Pengelola" id="NoTelp-Pengelola"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Masukkan nomor pengelola" required>
+                                                </div>
+                                            </div>
+                                            <!-- Alamat -->
+                                            <div class="grid grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+                                                <div class="col-span-2 xl:col-span-3">
+                                                    <h3 class=" text-black dark:text-white font-medium">Address :
+                                                    </h3>
+                                                </div>
+                                                <div class="">
+                                                    <label for="RT"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">RT
+                                                        <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="RT" id="RT"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Cth : 003" required>
+                                                </div>
+                                                <div class="">
+                                                    <label for="RW"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">RW
+                                                        <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="RW" id="RW"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Cth : 011" required>
+                                                </div>
+                                                <div class="">
+                                                    <label for="Kelurahan"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Kelurahan
+                                                        <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="Kelurahan" id="Kelurahan"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Cth : Karangnanas" required="">
+                                                </div>
+                                                <div class="">
+                                                    <label for="Kecamatan"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Kecamatan
+                                                        <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="Kecamatan" id="Kecamatan"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Cth : Purwokerto Selatan" required="">
+                                                </div>
+                                                <div class="">
+                                                    <label for="Kabupaten"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Kabupaten
+                                                        <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="Kabupaten" id="Kabupaten"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Cth : Banyumas" required="">
+                                                </div>
+                                                <div class="">
+                                                    <label for="Kodepos"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Kodepos
+                                                        <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="Kodepos" id="Kodepos"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Cth : 45531" required="">
+                                                </div>
+                                            </div>
+                                            <!-- Spesifikasi -->
+                                            <div class="grid grid-cols-2 gap-6 mb-4.5">
+                                                <div class="col-span-2">
+                                                    <h3 class=" text-black dark:text-white font-medium">Spesifikasi :
+                                                    </h3>
+                                                </div>
+                                                <!-- Tipe -->
+                                                <div class="">
+                                                    <label for="Tipe"
+                                                        class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                        Tipe
+                                                    </label>
+                                                    <div class="relative">
+                                                        <select name="Tipe" id="Tipe"
+                                                            class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                            <option selected disabled hidden>Kost</option>
+                                                            <option value="Kost">Kost</option>
+                                                            <option value="Kontrakan">Kontrakan</option>
+                                                        </select>
+                                                        <span class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                            <svg class="fill-current" width="24" height="24"
+                                                                viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.8">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                        fill=""></path>
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!-- Status -->
+                                                <div class="">
+                                                    <label for="Status"
+                                                        class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                        Status
+                                                    </label>
+                                                    <div class="relative">
+                                                        <select name="Status" id="Status"
+                                                            class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                            <option selected disabled hidden>Regular</option>
+                                                            <option value="Regular">Regular</option>
+                                                            <option value="Eksklusif">Eksklusif</option>
+                                                            <option value="VIP">VIP</option>
+
+                                                        </select>
+                                                        <span class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                            <svg class="fill-current" width="24" height="24"
+                                                                viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.8">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                        fill=""></path>
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!-- Rating -->
+                                                <div class="">
+                                                    <label for="Rating"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Rating
+                                                        <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="Rating" id="Rating"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Maks 5.0" required>
+                                                </div>
+                                                <!-- Jenis Penghuni -->
+                                                <div class="">
+                                                    <label for="Jenis-Penghuni"
+                                                        class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                        Jenis Penghuni
+                                                    </label>
+                                                    <div class="relative">
+                                                        <select name="Jenis-Penghuni" id="Jenis-Penghuni"
+                                                            class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                            <option selected disabled hidden>None</option>
+                                                            <option value="None">None</option>
+                                                            <option value="Pria">Pria</option>
+                                                            <option value="Wanita">Wanita</option>
+                                                            <option value="Campur">Campur</option>
+
+                                                        </select>
+                                                        <span class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                            <svg class="fill-current" width="24" height="24"
+                                                                viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.8">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                        fill=""></path>
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!-- Akses Jalan -->
+                                                <div class="">
+                                                    <label for="Akses-Jalan"
+                                                        class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                        Akses Jalan
+                                                    </label>
+                                                    <div class="relative">
+                                                        <select name="Akses-Jalan" id="Akses-Jalan"
+                                                            class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                            <option selected disabled hidden>Motor</option>
+                                                            <option value="Motor">Motor</option>
+                                                            <option value="Mobil">Mobil</option>
+                                                            <option value="Pejalan-Kaki">Pejalan Kaki</option>
+                                                        </select>
+                                                        <span class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                            <svg class="fill-current" width="24" height="24"
+                                                                viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.8">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                        fill=""></path>
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!-- Listrik -->
+                                                <div class="">
+                                                    <label for="Listrik"
+                                                        class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                        Listrik
+                                                    </label>
+                                                    <div class="relative">
+                                                        <select name="Listrik" id="Listrik"
+                                                            class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                            <option selected disabled hidden>None</option>
+                                                            <option value="None">None</option>
+                                                            <option value="Include Listrik">Include Listrik</option>
+                                                            <option value="Non-Listrik">Non Listrik</option>
+                                                        </select>
+                                                        <span class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                            <svg class="fill-current" width="24" height="24"
+                                                                viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.8">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                        fill=""></path>
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!-- Luas Kamar -->
+                                                <div class="">
+                                                    <label for="Luas-Kamar"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Luas
+                                                        Kamar <span>(Ketik 0 jika kontrakan)</span>
+                                                    </label>
+                                                    <input type="text" name="Luas-Kamar" id="Luas-Kamar"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Cth : 3 x 3 Meter">
+                                                </div>
+                                                <!-- Sisa Kamar -->
+                                                <div class="">
+                                                    <label for="Sisa-Kamar"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Sisa
+                                                        Kamar
+                                                    </label>
+                                                    <input type="number" name="Sisa-Kamar" id="Sisa-Kamar"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="0 - 15" min="0" max="15" value="1">
+                                                </div>
+                                                <!-- Jumlah Kamar -->
+                                                <div class="">
+                                                    <label for="Jumlah-Kamar"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Jml.
+                                                        Kamar
+                                                    </label>
+                                                    <input type="number" name="Jumlah-Kamar" id="Jumlah-Kamar"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="0 - 15" min="0" max="15" value="0">
+                                                </div>
+                                                <!-- Jumlah Kamar Mandi -->
+                                                <div class="">
+                                                    <label for="Jumlah-Kamar-Mandi"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Jml. Kamar
+                                                        Mandi
+                                                    </label>
+                                                    <input type="number" name="Jumlah-Kamar-Mandi"
+                                                        id="Jumlah-Kamar-Mandi"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Jumlah Kamar Mandi" min="0" max="15" value="0">
+                                                </div>
+                                            </div>
+                                            <div class="mb-6">
+                                                <label
+                                                    class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                    Catatan
+                                                </label>
+                                                <textarea rows="6" placeholder="Ketik catatan produk ini "
+                                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Fasilitas Umum -->
+                                    <div
+                                        class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                        <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                                            <h3 class="font-medium text-black dark:text-white">
+                                                Fasilitas Umum
+                                            </h3>
+                                        </div>
+                                        <div class="p-6.5">
+                                            <!-- Fasilitas Umum -->
+                                            <div class=" grid grid-cols-2 gap-6 xl:grid-cols-3 items-center">
+                                                <!-- Ruang Tamu -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Ruang-Tamu"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Ruang-Tamu" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Ruang Tamu
+                                                    </label>
+                                                </div>
+                                                <!-- Ruang Makan -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Ruang-Makan"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Ruang-Makan" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Ruang Makan
+                                                    </label>
+                                                </div>
+                                                <!-- Dapur -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Dapur"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Dapur" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Dapur
+                                                    </label>
+                                                </div>
+                                                <!-- Kulkas -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Kulkas"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Kulkas" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Kulkas
+                                                    </label>
+                                                </div>
+                                                <!-- Dispenser -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Dispenser"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Dispenser" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Dispenser
+                                                    </label>
+                                                </div>
+                                                <!-- Mushola -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Mushola"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Mushola" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Mushola
+                                                    </label>
+                                                </div>
+                                                <!-- Ruang Santai -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Ruang-Santai"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Ruang-Santai" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Ruang Santai
+                                                    </label>
+                                                </div>
+                                                <!-- Ruang Jemur -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Ruang-Jemur"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Ruang-Jemur" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Ruang Jemur
+                                                    </label>
+                                                </div>
+                                                <!-- Ruang Cuci -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Ruang-Cuci"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Ruang-Cuci" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Ruang Cuci
+                                                    </label>
+                                                </div>
+                                                <!-- Mesin Cuci -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Mesin-Cuci"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Mesin-Cuci" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Mesin Cuci
+                                                    </label>
+                                                </div>
+                                                <!-- Keamanan -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Keamanan"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Keamanan" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Keamanan
+                                                    </label>
+                                                </div>
+                                                <!-- Wifi -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Wifi"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Wifi" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Wifi
+                                                    </label>
+                                                </div>
+                                                <!-- Parkiran Motor -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Parkiran-Motor"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Parkiran-Motor" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Parkiran Motor
+                                                    </label>
+                                                </div>
+                                                <!-- Parkiran Mobil -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Parkiran-Mobil"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Parkiran-Mobil" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Parkiran Mobil
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Fasilitas Kamar -->
+                                    <div
+                                        class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                        <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                                            <h3 class="font-medium text-black dark:text-white">
+                                                Fasilitas Kamar
+                                            </h3>
+                                        </div>
+                                        <div class="p-6.5">
+                                            <!-- Fasilitas Kamar -->
+                                            <div class=" grid grid-cols-2 gap-6 xl:grid-cols-3 items-center">
+                                                <!-- Kasur -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Kasur"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Kasur" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Kasur
+                                                    </label>
+                                                </div>
+                                                <!-- Lemari -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Lemari"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Lemari" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Lemari
+                                                    </label>
+                                                </div>
+                                                <!-- Meja -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Meja"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Meja" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Meja
+                                                    </label>
+                                                </div>
+                                                <!-- Kursi -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Kursi"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Kursi" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Kursi
+                                                    </label>
+                                                </div>
+                                                <!-- Tv -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Tv"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Tv" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Tv
+                                                    </label>
+                                                </div>
+                                                <!-- AC -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="AC"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="AC" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        AC
+                                                    </label>
+                                                </div>
+                                                <!-- Meja Rias -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Meja Rias"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Meja Rias" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Meja Rias
+                                                    </label>
+                                                </div>
+                                                <!-- Kipas -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Kipas"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Kipas" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Kipas
+                                                    </label>
+                                                </div>
+                                                <!-- Kamar Kosong -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Kamar-Kosong"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Kamar-Kosong" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Kamar Kosong
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-9">
+                                    <!-- Fasilitas Kamar Mandi -->
+                                    <div
+                                        class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                        <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                                            <h3 class="font-medium text-black dark:text-white">
+                                                Fasilitas Kamar Mandi
+                                            </h3>
+                                        </div>
+                                        <div class="p-6.5">
+                                            <div class="grid-cols-2 grid gap-6">
+                                                <div class="flex flex-col gap-6">
+                                                    <!-- Tipe Kamar Mandi -->
+                                                    <div class="">
+                                                        <h3
+                                                            class="text-sm font-medium text-black dark:text-white mb-4.5">
+                                                            Tipe Kamar Mandi <span class="text-meta-1">*</span></h3>
+                                                        <div class="flex flex-col gap-4.5">
+                                                            <!-- Kamar Mandi Dalam -->
+                                                            <div class="">
+                                                                <label for="Kamar-Mandi-Dalam"
+                                                                    class="flex text-sm font-medium items-center hover:cursor-pointer">
+                                                                    <input id="Kamar-Mandi-Dalam"
+                                                                        name="Jenis-Kamar-Mandi" type="radio"
+                                                                        class="mr-4 w-5 h-5">
+                                                                    Kamar Mandi Dalam
+                                                                </label>
+                                                            </div>
+                                                            <!-- Kamar Mandi Luar -->
+                                                            <div class="">
+                                                                <label for="Kamar-Mandi-Luar"
+                                                                    class="flex text-sm font-medium items-center hover:cursor-pointer">
+                                                                    <input id="Kamar-Mandi-Luar"
+                                                                        name="Jenis-Kamar-Mandi" type="radio"
+                                                                        class="mr-4 w-5 h-5">
+                                                                    Kamar Mandi Luar
+                                                                </label>
+                                                            </div>
+                                                            <!-- None -->
+                                                            <div class="">
+                                                                <label for="None-Kamar-Mandi"
+                                                                    class="flex text-sm font-medium items-center hover:cursor-pointer">
+                                                                    <input id="None-Kamar-Mandi"
+                                                                        name="Jenis-Kamar-Mandi" type="radio"
+                                                                        class="mr-4 w-5 h-5">
+                                                                    Tidak Ada
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Tipe Kloset -->
+                                                    <div class="">
+                                                        <h3
+                                                            class="text-sm font-medium text-black dark:text-white mb-4.5">
+                                                            Tipe Kloset <span class="text-meta-1">*</span></h3>
+                                                        <div class="flex flex-col gap-4.5">
+                                                            <!-- Kloset Duduk -->
+                                                            <div class="">
+                                                                <label for="Kloset-Duduk"
+                                                                    class="flex text-sm font-medium items-center hover:cursor-pointer">
+                                                                    <input id="Kloset-Duduk" name="Jenis-Kloset"
+                                                                        type="radio" class="mr-4 w-5 h-5">
+                                                                    Kloset Duduk
+                                                                </label>
+                                                            </div>
+                                                            <!-- Kloset Jongkok -->
+                                                            <div class="">
+                                                                <label for="Kloset-Jongkok"
+                                                                    class="flex text-sm font-medium items-center hover:cursor-pointer">
+                                                                    <input id="Kloset-Jongkok" name="Jenis-Kloset"
+                                                                        type="radio" class="mr-4 w-5 h-5">
+                                                                    Kloset Jongkok
+                                                                </label>
+                                                            </div>
+                                                            <!-- Tidak Ada -->
+                                                            <div class="">
+                                                                <label for="None-Kloset"
+                                                                    class="flex text-sm font-medium items-center hover:cursor-pointer">
+                                                                    <input id="None-Kloset" name="Jenis-Kloset"
+                                                                        type="radio" class="mr-4 w-5 h-5">
+                                                                    Tidak Ada
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-6">
+                                                    <!-- Shower -->
+                                                    <div x-data="{ checkboxToggle: false }">
+                                                        <label for="Shower"
+                                                            class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                            <div class="relative">
+                                                                <input type="checkbox" id="Shower" class="sr-only"
+                                                                    @change="checkboxToggle = !checkboxToggle" />
+                                                                <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                    class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                    <span :class="checkboxToggle && '!opacity-100'"
+                                                                        class="opacity-0">
+                                                                        <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                                fill="#3056D3" stroke="#3056D3"
+                                                                                stroke-width="0.4"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            Shower
+                                                        </label>
+                                                    </div>
+                                                    <!-- Bak Mandi -->
+                                                    <div x-data="{ checkboxToggle: false }">
+                                                        <label for="Bak-Mandi"
+                                                            class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                            <div class="relative">
+                                                                <input type="checkbox" id="Bak-Mandi" class="sr-only"
+                                                                    @change="checkboxToggle = !checkboxToggle" />
+                                                                <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                    class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                    <span :class="checkboxToggle && '!opacity-100'"
+                                                                        class="opacity-0">
+                                                                        <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                                fill="#3056D3" stroke="#3056D3"
+                                                                                stroke-width="0.4"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            Bak Mandi
+                                                        </label>
+                                                    </div>
+                                                    <!-- Bath Tube -->
+                                                    <div x-data="{ checkboxToggle: false }">
+                                                        <label for="Bath-Tube"
+                                                            class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                            <div class="relative">
+                                                                <input type="checkbox" id="Bath-Tube" class="sr-only"
+                                                                    @change="checkboxToggle = !checkboxToggle" />
+                                                                <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                    class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                    <span :class="checkboxToggle && '!opacity-100'"
+                                                                        class="opacity-0">
+                                                                        <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                                fill="#3056D3" stroke="#3056D3"
+                                                                                stroke-width="0.4"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            Bath Tube
+                                                        </label>
+                                                    </div>
+                                                    <!-- Water Heater -->
+                                                    <div x-data="{ checkboxToggle: false }">
+                                                        <label for="Water-Heater"
+                                                            class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                            <div class="relative">
+                                                                <input type="checkbox" id="Water-Heater" class="sr-only"
+                                                                    @change="checkboxToggle = !checkboxToggle" />
+                                                                <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                    class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                    <span :class="checkboxToggle && '!opacity-100'"
+                                                                        class="opacity-0">
+                                                                        <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                                fill="#3056D3" stroke="#3056D3"
+                                                                                stroke-width="0.4"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            Water Heater
+                                                        </label>
+                                                    </div>
+                                                    <!-- Westafel -->
+                                                    <div x-data="{ checkboxToggle: false }">
+                                                        <label for="Westafel"
+                                                            class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                            <div class="relative">
+                                                                <input type="checkbox" id="Westafel" class="sr-only"
+                                                                    @change="checkboxToggle = !checkboxToggle" />
+                                                                <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                    class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                    <span :class="checkboxToggle && '!opacity-100'"
+                                                                        class="opacity-0">
+                                                                        <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                                fill="#3056D3" stroke="#3056D3"
+                                                                                stroke-width="0.4"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            Westafel
+                                                        </label>
+                                                    </div>
+                                                    <!-- Ember Mandi -->
+                                                    <div x-data="{ checkboxToggle: false }">
+                                                        <label for="Ember-Mandi"
+                                                            class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                            <div class="relative">
+                                                                <input type="checkbox" id="Ember-Mandi" class="sr-only"
+                                                                    @change="checkboxToggle = !checkboxToggle" />
+                                                                <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                    class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                    <span :class="checkboxToggle && '!opacity-100'"
+                                                                        class="opacity-0">
+                                                                        <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                                fill="#3056D3" stroke="#3056D3"
+                                                                                stroke-width="0.4"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            Ember Mandi
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Peraturan Kost -->
+                                    <div
+                                        class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                        <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                                            <h3 class="font-medium text-black dark:text-white">
+                                                Peraturan Kost <span class="text-[#9CA3AF] dark:text-[##D1D5DB]">(Hanya
+                                                    isi ketika kost)</span>
+                                            </h3>
+                                        </div>
+                                        <div class="p-6.5">
+                                            <!-- Peraturan Kost -->
+                                            <div class="mb-4.5 grid grid-cols-2 gap-6 xl:grid-cols-3 items-center">
+                                                <!-- Pasutri -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Pasutri"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Pasutri" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Pasutri
+                                                    </label>
+                                                </div>
+                                                <!-- Sekamar Berdua -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Sekamar-Berdua"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Sekamar-Berdua" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Sekamar Berdua
+                                                    </label>
+                                                </div>
+                                                <!-- Sekamar Bertiga -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Sekamar-Bertiga"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Sekamar-Bertiga" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Sekamar Bertiga
+                                                    </label>
+                                                </div>
+                                                <!-- Lawan Jenis -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Lawan-Jenis"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Lawan-Jenis" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Lawan Jenis
+                                                    </label>
+                                                </div>
+                                                <!-- Peliharaan -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Peliharaan"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Peliharaan" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Peliharaan
+                                                    </label>
+                                                </div>
+                                                <!-- Merokok -->
+                                                <div x-data="{ checkboxToggle: false }">
+                                                    <label for="Merokok"
+                                                        class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                                        <div class="relative">
+                                                            <input type="checkbox" id="Merokok" class="sr-only"
+                                                                @change="checkboxToggle = !checkboxToggle" />
+                                                            <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                                                class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                                                <span :class="checkboxToggle && '!opacity-100'"
+                                                                    class="opacity-0">
+                                                                    <svg width="11" height="8" viewBox="0 0 11 8"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                                            fill="#3056D3" stroke="#3056D3"
+                                                                            stroke-width="0.4"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        Merokok
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="grid grid-cols-2 gap-6 items-center">
+                                                <!-- Akses -->
+                                                <div class="">
+                                                    <label for="Akses"
+                                                        class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                        Akses
+                                                    </label>
+                                                    <div class="relative">
+                                                        <select name="Akses" id="Akses"
+                                                            class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                            <option selected disabled hidden>24 Jam</option>
+                                                            <option value="24Jam">24 Jam</option>
+                                                            <option value="Under22.00">Under 22.00</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+                                                        <span class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                            <svg class="fill-current" width="24" height="24"
+                                                                viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.8">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                        fill=""></path>
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!-- Other Akses -->
+                                                <div class="w-full">
+                                                    <label for="Other-Akses"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Akses
+                                                        Lainnya
+                                                    </label>
+                                                    <input type="text" name="Other-Akses" id="Other-Akses"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Masukkan akses lainnya" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Akses Lingkungan -->
+                                    <div
+                                        class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                        <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                                            <h3 class="font-medium text-black dark:text-white">
+                                                Akses Lingkungan
+                                            </h3>
+                                        </div>
+                                        <div class="p-6.5">
+                                            <div class="grid grid-cols-2 gap-6 items-center">
+                                                <!-- Rumah Makan -->
+                                                <div class=" flex flex-col gap-4.5">
+                                                    <!-- Select Option -->
+                                                    <div class="">
+                                                        <label for="Rumah-Makan"
+                                                            class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                            Rumah Makan
+                                                        </label>
+                                                        <div class="relative">
+                                                            <select name="Rumah-Makan" id="Rumah-Makan"
+                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                                <option selected disabled hidden>Tidak Ada</option>
+                                                                <option value="Tidak-Ada">Tidak Ada</option>
+                                                                <option value="Lainnya">Lainnya</option>
+                                                            </select>
+                                                            <span
+                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                                <svg class="fill-current" width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.8">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                            fill=""></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Nama Rumah Makan -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Nama-Rumah-Makan" id="Nama-Rumah-Makan"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Rumah makan terdekat" disabled>
+                                                    </div>
+                                                    <!-- Jarak Rumah Makan -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Jarak-Rumah-Makan"
+                                                            id="Jarak-Rumah-Makan"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Jarak rumah makan" disabled>
+                                                    </div>
+                                                </div>
+                                                <!-- Mini Market -->
+                                                <div class=" flex flex-col gap-4.5">
+                                                    <!-- Select Option -->
+                                                    <div class="">
+                                                        <label for="Mini-Market"
+                                                            class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                            Mini Market
+                                                        </label>
+                                                        <div class="relative">
+                                                            <select name="Mini-Market" id="Mini-Market"
+                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                                <option selected disabled hidden>Tidak Ada</option>
+                                                                <option value="Tidak-Ada">Tidak Ada</option>
+                                                                <option value="Lainnya">Lainnya</option>
+                                                            </select>
+                                                            <span
+                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                                <svg class="fill-current" width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.8">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                            fill=""></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Nama Mini Market -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Nama-Mini-Market" id="Nama-Mini-Market"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Mini market terdekat" disabled>
+                                                    </div>
+                                                    <!-- Jarak Mini Market -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Jarak-Mini-Market"
+                                                            id="Jarak-Mini-Market"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Jarak mini market" disabled>
+                                                    </div>
+                                                </div>
+                                                <!-- Warung -->
+                                                <div class=" flex flex-col gap-4.5">
+                                                    <!-- Select Option -->
+                                                    <div class="">
+                                                        <label for="Warung"
+                                                            class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                            Warung
+                                                        </label>
+                                                        <div class="relative">
+                                                            <select name="Warung" id="Warung"
+                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                                <option selected disabled hidden>Tidak Ada</option>
+                                                                <option value="Tidak-Ada">Tidak Ada</option>
+                                                                <option value="Lainnya">Lainnya</option>
+                                                            </select>
+                                                            <span
+                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                                <svg class="fill-current" width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.8">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                            fill=""></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Nama Warung -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Nama-Warung" id="Nama-Warung"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Warung terdekat" disabled>
+                                                    </div>
+                                                    <!-- Jarak Mini Market -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Jarak-Warung" id="Jarak-Warung"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Jarak warung" disabled>
+                                                    </div>
+                                                </div>
+                                                <!-- Laundry -->
+                                                <div class=" flex flex-col gap-4.5">
+                                                    <!-- Select Option -->
+                                                    <div class="">
+                                                        <label for="Laundry"
+                                                            class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                            Laundry
+                                                        </label>
+                                                        <div class="relative">
+                                                            <select name="Laundry" id="Laundry"
+                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                                <option selected disabled hidden>Tidak Ada</option>
+                                                                <option value="Tidak-Ada">Tidak Ada</option>
+                                                                <option value="Lainnya">Lainnya</option>
+                                                            </select>
+                                                            <span
+                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                                <svg class="fill-current" width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.8">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                            fill=""></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Nama Laundry -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Nama-Laundry" id="Nama-Laundry"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Laundry terdekat" disabled>
+                                                    </div>
+                                                    <!-- Jarak Laundry -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Jarak-Laundry" id="Jarak-Laundry"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Jarak laundry" disabled>
+                                                    </div>
+                                                </div>
+                                                <!-- ATM -->
+                                                <div class=" flex flex-col gap-4.5">
+                                                    <!-- Select Option -->
+                                                    <div class="">
+                                                        <label for="ATM"
+                                                            class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                            ATM
+                                                        </label>
+                                                        <div class="relative">
+                                                            <select name="ATM" id="ATM"
+                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                                <option selected disabled hidden>Tidak Ada</option>
+                                                                <option value="Tidak-Ada">Tidak Ada</option>
+                                                                <option value="Lainnya">Lainnya</option>
+                                                            </select>
+                                                            <span
+                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                                <svg class="fill-current" width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.8">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                            fill=""></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Nama ATM -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Nama-ATM" id="Nama-ATM"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="ATM terdekat" disabled>
+                                                    </div>
+                                                    <!-- Jarak ATM -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Jarak-ATM" id="Jarak-ATM"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Jarak Atm" disabled>
+                                                    </div>
+                                                </div>
+                                                <!-- Apotik -->
+                                                <div class=" flex flex-col gap-4.5">
+                                                    <!-- Select Option -->
+                                                    <div class="">
+                                                        <label for="Apotik"
+                                                            class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                            Apotik
+                                                        </label>
+                                                        <div class="relative">
+                                                            <select name="Apotik" id="Apotik"
+                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                                <option selected disabled hidden>Tidak Ada</option>
+                                                                <option value="Tidak-Ada">Tidak Ada</option>
+                                                                <option value="Lainnya">Lainnya</option>
+                                                            </select>
+                                                            <span
+                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                                <svg class="fill-current" width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.8">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                            fill=""></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Nama Apotik -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Nama-Apotik" id="Nama-Apotik"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Apotik terdekat" disabled>
+                                                    </div>
+                                                    <!-- Jarak Apotik -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Jarak-Apotik" id="Jarak-Apotik"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Jarak apotik" disabled>
+                                                    </div>
+                                                </div>
+                                                <!-- Kampus -->
+                                                <div class=" flex flex-col gap-4.5">
+                                                    <!-- Select Option -->
+                                                    <div class="">
+                                                        <label for="Kampus"
+                                                            class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                            Kampus
+                                                        </label>
+                                                        <div class="relative">
+                                                            <select name="Kampus" id="Kampus"
+                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                                                                <option selected disabled hidden>Tidak Ada</option>
+                                                                <option value="Tidak-Ada">Tidak Ada</option>
+                                                                <option value="Lainnya">Lainnya</option>
+                                                            </select>
+                                                            <span
+                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
+                                                                <svg class="fill-current" width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.8">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                                            fill=""></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Nama Kampus -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Nama-Kampus" id="Nama-Kampus"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Kampus terdekat" disabled>
+                                                    </div>
+                                                    <!-- Jarak Kampus -->
+                                                    <div class="w-full">
+                                                        <input type="text" name="Jarak-Kampus" id="Jarak-Kampus"
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Jarak kampus" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Button Submit -->
+                                    <div
+                                        class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                        <div class="p-6.5">
+                                            <button
+                                                class="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
+                                                Buat Katalog Sekarang
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </form>
+                        <!-- ====== Product Section End -->
+                    </div>
+                </div>
+            </main>
+            <!-- ===== Main Content End ===== -->
+        </div>
+        <!-- ===== Content Area End ===== -->
+    </div>
+    <!-- ===== Page Wrapper End ===== -->
+
+</body>
+
+</html>
