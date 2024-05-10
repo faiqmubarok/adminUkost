@@ -40,7 +40,7 @@
                         <!-- Breadcrumb Start -->
                         <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                             <h2 class="text-title-md2 font-bold text-black dark:text-white">
-                                Buat Produk Baru
+                                Buat Katalog Baru
                             </h2>
 
                             <nav>
@@ -60,7 +60,7 @@
                         <!-- ====== Product Section Start -->
                         <form action="">
                             <section class="grid grid-cols-1 gap-9 md:grid-cols-2">
-                                <!-- General, Fasilitas Umum, Fasilitas Kamar -->
+                                <!-- General, Administrasi, Fasilitas Umum -->
                                 <div class="flex flex-col gap-9">
                                     <!-- General -->
                                     <div
@@ -140,6 +140,16 @@
                                                     <h3 class=" text-black dark:text-white font-medium">Address :
                                                     </h3>
                                                 </div>
+                                                <!-- Jalan -->
+                                                <div class="">
+                                                    <label for="Jalan"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Jalan
+                                                        <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="Jalan" id="Jalan"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Cth : Jl Gerilya" required>
+                                                </div>
+                                                <!-- RT -->
                                                 <div class="">
                                                     <label for="RT"
                                                         class="block mb-3 text-sm font-medium text-black dark:text-white">RT
@@ -148,6 +158,7 @@
                                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                                         placeholder="Cth : 003" required>
                                                 </div>
+                                                <!-- RW -->
                                                 <div class="">
                                                     <label for="RW"
                                                         class="block mb-3 text-sm font-medium text-black dark:text-white">RW
@@ -156,6 +167,7 @@
                                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                                         placeholder="Cth : 011" required>
                                                 </div>
+                                                <!-- Kelurahan -->
                                                 <div class="">
                                                     <label for="Kelurahan"
                                                         class="block mb-3 text-sm font-medium text-black dark:text-white">Kelurahan
@@ -164,6 +176,7 @@
                                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                                         placeholder="Cth : Karangnanas" required="">
                                                 </div>
+                                                <!-- Kecamatan -->
                                                 <div class="">
                                                     <label for="Kecamatan"
                                                         class="block mb-3 text-sm font-medium text-black dark:text-white">Kecamatan
@@ -172,6 +185,7 @@
                                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                                         placeholder="Cth : Purwokerto Selatan" required="">
                                                 </div>
+                                                <!-- Kabupaten -->
                                                 <div class="">
                                                     <label for="Kabupaten"
                                                         class="block mb-3 text-sm font-medium text-black dark:text-white">Kabupaten
@@ -180,6 +194,16 @@
                                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                                         placeholder="Cth : Banyumas" required="">
                                                 </div>
+                                                <!-- Provinsi -->
+                                                <div class="">
+                                                    <label for="Provinsi"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Provinsi
+                                                        <span class="text-meta-1">*</span></label>
+                                                    <input type="text" name="Provinsi" id="Provinsi"
+                                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                        placeholder="Cth : Jawa Tengah" required="">
+                                                </div>
+                                                <!-- Kodepos -->
                                                 <div class="">
                                                     <label for="Kodepos"
                                                         class="block mb-3 text-sm font-medium text-black dark:text-white">Kodepos
@@ -190,8 +214,8 @@
                                                 </div>
                                             </div>
                                             <!-- Spesifikasi -->
-                                            <div class="grid grid-cols-2 gap-6 mb-4.5">
-                                                <div class="col-span-2">
+                                            <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-4.5">
+                                                <div class="xl:col-span-2">
                                                     <h3 class=" text-black dark:text-white font-medium">Spesifikasi :
                                                     </h3>
                                                 </div>
@@ -383,12 +407,72 @@
                                                         placeholder="Jumlah Kamar Mandi" min="0" max="15" value="0">
                                                 </div>
                                             </div>
-                                            <div class="mb-6">
-                                                <label
+                                            <div class="">
+                                                <label for="Catatan"
                                                     class="mb-3 block text-sm font-medium text-black dark:text-white">
                                                     Catatan
                                                 </label>
-                                                <textarea rows="6" placeholder="Ketik catatan produk ini "
+                                                <textarea rows="6" placeholder="Ketik catatan produk ini" id="Catatan"
+                                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Administrasi -->
+                                    <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                        <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                                            <h3 class="font-medium text-black dark:text-white">
+                                                Administrasi
+                                            </h3>
+                                        </div>
+                                        <div class="p-6.5">
+                                            <!-- Harga Sewa & Min DP -->
+                                            <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                                                <!-- Harga Sewa -->
+                                                <div class="w-full xl:w-1/2">
+                                                    <label for="Harga-Sewa"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Harga Sewa
+                                                        <span class="text-meta-1">*</span> </label>
+                                                    <div class="relative">
+                                                        <input type="text" name="Harga-Sewa" id="Harga-Sewa" formatRupiah
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent pl-12 pr-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Masukkan harga sewa" required="">
+                                                        <span class="absolute top-1/2 left-5 -translate-y-1/2 ">Rp.</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Minimal DP -->
+                                                <div class="w-full xl:w-1/2">
+                                                    <label for="Minimal-DP"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Minimal DP <span class="text-meta-1">*</span> </label>
+                                                    <div class="relative">
+                                                        <input type="text" name="Minimal-DP" id="Minimal-DP" formatRupiah
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent pl-12 pr-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Masukkan minimal DP" required>
+                                                        <span class="absolute top-1/2 left-5 -translate-y-1/2 ">Rp.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Komisi -->
+                                            <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                                                <!-- Komisi -->
+                                                <div class="w-full xl:w-1/2">
+                                                    <label for="Komisi"
+                                                        class="block mb-3 text-sm font-medium text-black dark:text-white">Komisi
+                                                        <span class="text-meta-1">*</span> </label>
+                                                    <div class="relative">
+                                                        <input type="text" name="Komisi" id="Komisi" formatRupiah
+                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent pr-5 pl-12 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                            placeholder="Masukkan komisi" required="">
+                                                            <span class="absolute top-1/2 left-5 -translate-y-1/2 ">Rp.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Keterangan -->
+                                            <div class="">
+                                                <label for="Keterangan"
+                                                    class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                    Keterangan
+                                                </label>
+                                                <textarea id="Keterangan" rows="6" placeholder="Ketik keterangan tentang administrasi"
                                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
                                             </div>
                                         </div>
@@ -743,6 +827,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="flex flex-col gap-9">
                                     <!-- Fasilitas Kamar -->
                                     <div
                                         class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -973,8 +1059,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="flex flex-col gap-9">
                                     <!-- Fasilitas Kamar Mandi -->
                                     <div
                                         class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -1372,7 +1456,7 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="grid grid-cols-2 gap-6 items-center">
+                                            <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 items-center">
                                                 <!-- Akses -->
                                                 <div class="">
                                                     <label for="Akses"
@@ -1418,310 +1502,186 @@
                                         class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                                         <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                                             <h3 class="font-medium text-black dark:text-white">
-                                                Akses Lingkungan
+                                                Akses Lingkungan <span class="text-[#9CA3AF] dark:text-[##D1D5DB]">(Kosongkan jika tidak ada)</span>
                                             </h3>
                                         </div>
                                         <div class="p-6.5">
                                             <div class="grid grid-cols-2 gap-6 items-center">
                                                 <!-- Rumah Makan -->
-                                                <div class=" flex flex-col gap-4.5">
-                                                    <!-- Select Option -->
-                                                    <div class="">
-                                                        <label for="Rumah-Makan"
+                                                <div class="flex flex-col col-span-2">
+                                                    <label for="Nama-Rumah-Makan"
                                                             class="mb-3 block text-sm font-medium text-black dark:text-white">
                                                             Rumah Makan
-                                                        </label>
-                                                        <div class="relative">
-                                                            <select name="Rumah-Makan" id="Rumah-Makan"
-                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
-                                                                <option selected disabled hidden>Tidak Ada</option>
-                                                                <option value="Tidak-Ada">Tidak Ada</option>
-                                                                <option value="Lainnya">Lainnya</option>
-                                                            </select>
-                                                            <span
-                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
-                                                                <svg class="fill-current" width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <g opacity="0.8">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                                            fill=""></path>
-                                                                    </g>
-                                                                </svg>
-                                                            </span>
+                                                    </label>
+                                                    <div class="flex flex-col xl:flex-row gap-4.5 xl:gap-6.5">
+                                                        <!-- Nama Rumah Makan -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Nama-Rumah-Makan" id="Nama-Rumah-Makan"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Rumah makan terdekat">
                                                         </div>
-                                                    </div>
-                                                    <!-- Nama Rumah Makan -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Nama-Rumah-Makan" id="Nama-Rumah-Makan"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Rumah makan terdekat" disabled>
-                                                    </div>
-                                                    <!-- Jarak Rumah Makan -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Jarak-Rumah-Makan"
-                                                            id="Jarak-Rumah-Makan"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Jarak rumah makan" disabled>
+                                                        <!-- Jarak Rumah Makan -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Jarak-Rumah-Makan"
+                                                                id="Jarak-Rumah-Makan"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Jarak rumah makan" >
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- Mini Market -->
-                                                <div class=" flex flex-col gap-4.5">
-                                                    <!-- Select Option -->
-                                                    <div class="">
-                                                        <label for="Mini-Market"
+                                                <div class="flex flex-col col-span-2">
+                                                    <label for="Nama-Mini-Market"
                                                             class="mb-3 block text-sm font-medium text-black dark:text-white">
                                                             Mini Market
-                                                        </label>
-                                                        <div class="relative">
-                                                            <select name="Mini-Market" id="Mini-Market"
-                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
-                                                                <option selected disabled hidden>Tidak Ada</option>
-                                                                <option value="Tidak-Ada">Tidak Ada</option>
-                                                                <option value="Lainnya">Lainnya</option>
-                                                            </select>
-                                                            <span
-                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
-                                                                <svg class="fill-current" width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <g opacity="0.8">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                                            fill=""></path>
-                                                                    </g>
-                                                                </svg>
-                                                            </span>
+                                                    </label>
+                                                    <div class="flex flex-col xl:flex-row gap-4.5 xl:gap-6.5">
+                                                        <!-- Nama Mini Market -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Nama-Mini-Market" id="Nama-Mini-Market"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Mini market terdekat">
                                                         </div>
-                                                    </div>
-                                                    <!-- Nama Mini Market -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Nama-Mini-Market" id="Nama-Mini-Market"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Mini market terdekat" disabled>
-                                                    </div>
-                                                    <!-- Jarak Mini Market -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Jarak-Mini-Market"
-                                                            id="Jarak-Mini-Market"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Jarak mini market" disabled>
+                                                        <!-- Jarak Mini Market -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Jarak-Mini-Market"
+                                                                id="Jarak-Mini-Market"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Jarak mini market" >
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- Warung -->
-                                                <div class=" flex flex-col gap-4.5">
-                                                    <!-- Select Option -->
-                                                    <div class="">
-                                                        <label for="Warung"
+                                                <div class="flex flex-col col-span-2">
+                                                    <label for="Nama-Warung"
                                                             class="mb-3 block text-sm font-medium text-black dark:text-white">
                                                             Warung
-                                                        </label>
-                                                        <div class="relative">
-                                                            <select name="Warung" id="Warung"
-                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
-                                                                <option selected disabled hidden>Tidak Ada</option>
-                                                                <option value="Tidak-Ada">Tidak Ada</option>
-                                                                <option value="Lainnya">Lainnya</option>
-                                                            </select>
-                                                            <span
-                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
-                                                                <svg class="fill-current" width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <g opacity="0.8">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                                            fill=""></path>
-                                                                    </g>
-                                                                </svg>
-                                                            </span>
+                                                    </label>
+                                                    <div class="flex flex-col xl:flex-row gap-4.5 xl:gap-6.5">
+                                                        <!-- Nama Warung -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Nama-Warung" id="Nama-Warung"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Warung terdekat">
                                                         </div>
-                                                    </div>
-                                                    <!-- Nama Warung -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Nama-Warung" id="Nama-Warung"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Warung terdekat" disabled>
-                                                    </div>
-                                                    <!-- Jarak Mini Market -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Jarak-Warung" id="Jarak-Warung"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Jarak warung" disabled>
+                                                        <!-- Jarak Warung -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Jarak-Warung"
+                                                                id="Jarak-Warung"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Jarak warung" >
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- Laundry -->
-                                                <div class=" flex flex-col gap-4.5">
-                                                    <!-- Select Option -->
-                                                    <div class="">
-                                                        <label for="Laundry"
+                                                <div class="flex flex-col col-span-2">
+                                                    <label for="Nama-Laundry"
                                                             class="mb-3 block text-sm font-medium text-black dark:text-white">
                                                             Laundry
-                                                        </label>
-                                                        <div class="relative">
-                                                            <select name="Laundry" id="Laundry"
-                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
-                                                                <option selected disabled hidden>Tidak Ada</option>
-                                                                <option value="Tidak-Ada">Tidak Ada</option>
-                                                                <option value="Lainnya">Lainnya</option>
-                                                            </select>
-                                                            <span
-                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
-                                                                <svg class="fill-current" width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <g opacity="0.8">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                                            fill=""></path>
-                                                                    </g>
-                                                                </svg>
-                                                            </span>
+                                                    </label>
+                                                    <div class="flex flex-col xl:flex-row gap-4.5 xl:gap-6.5">
+                                                        <!-- Nama Laundry -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Nama-Laundry" id="Nama-Laundry"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Laundry terdekat">
                                                         </div>
-                                                    </div>
-                                                    <!-- Nama Laundry -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Nama-Laundry" id="Nama-Laundry"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Laundry terdekat" disabled>
-                                                    </div>
-                                                    <!-- Jarak Laundry -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Jarak-Laundry" id="Jarak-Laundry"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Jarak laundry" disabled>
+                                                        <!-- Jarak Laundry -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Jarak-Laundry"
+                                                                id="Jarak-Laundry"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Jarak laundry" >
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- ATM -->
-                                                <div class=" flex flex-col gap-4.5">
-                                                    <!-- Select Option -->
-                                                    <div class="">
-                                                        <label for="ATM"
+                                                <div class="flex flex-col col-span-2">
+                                                    <label for="Nama-ATM"
                                                             class="mb-3 block text-sm font-medium text-black dark:text-white">
                                                             ATM
-                                                        </label>
-                                                        <div class="relative">
-                                                            <select name="ATM" id="ATM"
-                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
-                                                                <option selected disabled hidden>Tidak Ada</option>
-                                                                <option value="Tidak-Ada">Tidak Ada</option>
-                                                                <option value="Lainnya">Lainnya</option>
-                                                            </select>
-                                                            <span
-                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
-                                                                <svg class="fill-current" width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <g opacity="0.8">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                                            fill=""></path>
-                                                                    </g>
-                                                                </svg>
-                                                            </span>
+                                                    </label>
+                                                    <div class="flex flex-col xl:flex-row gap-4.5 xl:gap-6.5">
+                                                        <!-- Nama ATM -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Nama-ATM" id="Nama-ATM"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="ATM terdekat">
                                                         </div>
-                                                    </div>
-                                                    <!-- Nama ATM -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Nama-ATM" id="Nama-ATM"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="ATM terdekat" disabled>
-                                                    </div>
-                                                    <!-- Jarak ATM -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Jarak-ATM" id="Jarak-ATM"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Jarak Atm" disabled>
+                                                        <!-- Jarak ATM -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Jarak-ATM"
+                                                                id="Jarak-ATM"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Jarak Atm" >
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- Apotik -->
-                                                <div class=" flex flex-col gap-4.5">
-                                                    <!-- Select Option -->
-                                                    <div class="">
-                                                        <label for="Apotik"
+                                                <div class="flex flex-col col-span-2">
+                                                    <label for="Nama-Apotik"
                                                             class="mb-3 block text-sm font-medium text-black dark:text-white">
                                                             Apotik
-                                                        </label>
-                                                        <div class="relative">
-                                                            <select name="Apotik" id="Apotik"
-                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
-                                                                <option selected disabled hidden>Tidak Ada</option>
-                                                                <option value="Tidak-Ada">Tidak Ada</option>
-                                                                <option value="Lainnya">Lainnya</option>
-                                                            </select>
-                                                            <span
-                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
-                                                                <svg class="fill-current" width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <g opacity="0.8">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                                            fill=""></path>
-                                                                    </g>
-                                                                </svg>
-                                                            </span>
+                                                    </label>
+                                                    <div class="flex flex-col xl:flex-row gap-4.5 xl:gap-6.5">
+                                                        <!-- Nama Apotik -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Nama-Apotik" id="Nama-Apotik"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Apotik terdekat">
                                                         </div>
-                                                    </div>
-                                                    <!-- Nama Apotik -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Nama-Apotik" id="Nama-Apotik"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Apotik terdekat" disabled>
-                                                    </div>
-                                                    <!-- Jarak Apotik -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Jarak-Apotik" id="Jarak-Apotik"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Jarak apotik" disabled>
+                                                        <!-- Jarak ATM -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Jarak-Apotik"
+                                                                id="Jarak-Apotik"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Jarak apotik" >
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- Kampus -->
-                                                <div class=" flex flex-col gap-4.5">
-                                                    <!-- Select Option -->
-                                                    <div class="">
-                                                        <label for="Kampus"
+                                                <div class="flex flex-col col-span-2">
+                                                    <label for="Nama-Kampus"
                                                             class="mb-3 block text-sm font-medium text-black dark:text-white">
                                                             Kampus
-                                                        </label>
-                                                        <div class="relative">
-                                                            <select name="Kampus" id="Kampus"
-                                                                class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
-                                                                <option selected disabled hidden>Tidak Ada</option>
-                                                                <option value="Tidak-Ada">Tidak Ada</option>
-                                                                <option value="Lainnya">Lainnya</option>
-                                                            </select>
-                                                            <span
-                                                                class="absolute right-2 top-1/2 z-30 -translate-y-1/2">
-                                                                <svg class="fill-current" width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <g opacity="0.8">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                                            fill=""></path>
-                                                                    </g>
-                                                                </svg>
-                                                            </span>
+                                                    </label>
+                                                    <div class="flex flex-col xl:flex-row gap-4.5 xl:gap-6.5">
+                                                        <!-- Nama Kampus -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Nama-Kampus" id="Nama-Kampus"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Kampus terdekat">
                                                         </div>
-                                                    </div>
-                                                    <!-- Nama Kampus -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Nama-Kampus" id="Nama-Kampus"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Kampus terdekat" disabled>
-                                                    </div>
-                                                    <!-- Jarak Kampus -->
-                                                    <div class="w-full">
-                                                        <input type="text" name="Jarak-Kampus" id="Jarak-Kampus"
-                                                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-not-allowed  disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                                            placeholder="Jarak kampus" disabled>
+                                                        <!-- Jarak Kampus -->
+                                                        <div class="w-full">
+                                                            <input type="text" name="Jarak-Kampus"
+                                                                id="Jarak-Kampus"
+                                                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                                                placeholder="Jarak kampus" >
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Upload Gambar -->
+                                    <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                        <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                                            <h3 class="font-medium text-black dark:text-white">
+                                                Foto Produk
+                                            </h3>
+                                        </div>
+                                        <div class="p-6.5">
+                                            <div>
+                                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                                  Masukkan Foto Produk
+                                                </label>
+                                                <input type="file"
+                                                  class="w-full rounded-md border border-stroke p-3 outline-none transition file:mr-4 file:rounded file:border-[0.5px] file:border-stroke file:bg-[#EEEEEE] file:px-2.5 file:py-1 file:text-sm file:font-normal focus:border-primary file:focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:file:border-strokedark dark:file:bg-white/30 dark:file:text-white" multiple />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                     <!-- Button Submit -->
                                     <div
                                         class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -1746,6 +1706,37 @@
     </div>
     <!-- ===== Page Wrapper End ===== -->
 
+    <script>
+        // Objek RupiahFormatter
+        const RupiahFormatter = {
+        formatRupiah: function (angka) {
+            var number_string = angka.value.replace(/[^,\d]/g, '');
+            var split = number_string.split(',');
+            var sisa = split[0].length % 3;
+            var rupiah = split[0].substr(0, sisa);
+            var ribuan = split[0].substr(sisa).match(/\d{1,3}/gi);
+
+            if (ribuan) {
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+
+            var hasil = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            angka.value = hasil;
+        },
+        init: function () {
+            let rupiahFormat = document.querySelectorAll('[formatRupiah]');
+            rupiahFormat.forEach(element => {
+                element.addEventListener('input', function () {
+                    RupiahFormatter.formatRupiah(this);
+                });
+            });
+        }
+    };
+
+    // Inisialisasi objek RupiahFormatter
+    RupiahFormatter.init();
+    </script>
 </body>
 
 </html>
